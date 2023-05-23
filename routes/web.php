@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CurrencyController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -22,6 +23,8 @@ Route::group(['prefix' => 'admin'], function () {
 Route::get('/', [HomeController::class, 'index'])->name('homepage');
 Route::get('/ex', [HomeController::class, 'exchange'])->name('ex');
 Route::get('/update', [HomeController::class, 'update'])->middleware('auth')->name('update');
+Route::get('/update/auto', [HomeController::class, 'auto_update'])->middleware('auth')->name('auto.update');
+Route::post('/save', [CurrencyController::class, 'store'])->name('currency.store');
 
 Route::get('/login', function () {
     if (Auth::check()) {
@@ -32,3 +35,4 @@ Route::get('/login', function () {
         return redirect('/admin');
     }
 })->name('login');
+

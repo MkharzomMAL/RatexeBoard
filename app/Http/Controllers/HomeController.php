@@ -17,7 +17,7 @@ class HomeController extends Controller
         return view('homepage',compact('currencies','company'));
     }
 
-    public function exchange(){
+    private function exchange(){
 
         $symbols = implode(',', DB::table('currencies')->pluck('code')->toArray());
 
@@ -86,6 +86,15 @@ class HomeController extends Controller
     public function update(Request $request){
 
         $company = Company::get()->first();
-        return view('update',compact('company'));
+        $currencies = Currency::where('enable',1)->orderBy('sort')->get();
+
+        return view('update',compact('company','currencies'));
+    }
+
+    public function auto_update(Request $request){
+        $this->exchange();
+
+        return redirect('/update');
+
     }
 }

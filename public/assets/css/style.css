@@ -1,13 +1,62 @@
 .table td {
-    padding: 0.5rem;
+    padding: 0.4rem;
+    font-size: 16px;
+    font-weight: bolder;
 }
 .table tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: rgba(242, 242, 242, 0.5);
 }
+
+.table thead {
+    background-color: rgba(242, 242, 242, 0.5);
+}
+
+.table tr:nth-child(odd) {
+    background-color: rgba(180, 184, 240, 0.5);
+}
+
 
 small {
     font-size: 60%;
 }
 footer{
     height: 5%;
+}
+.form-control{
+    padding: 0;
+    font-size: 13px;
+}
+
+.update table td {
+    padding: 0;
+}
+
+.update table thead th{
+    padding: 0;
+}
+
+a.btn {
+    color: white;
+}
+
+a.btn:hover {
+    color: white;
+    font-weight: bold;
+}
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
+}
+
+td img.w-20 {
+    width: 20%;
+}
+
+.container{
+    max-width: 95%;
 }

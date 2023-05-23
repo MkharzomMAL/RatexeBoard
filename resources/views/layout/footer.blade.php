@@ -32,5 +32,11 @@
         setInterval(updateCurrentDateTime, 1000);
     </script>
 
+    <script>
+        document.getElementById("submit-btn").addEventListener("click", function() {
+        document.getElementById("update-form").submit();
+        });
+    </script>
+
 </body>
 </html>
