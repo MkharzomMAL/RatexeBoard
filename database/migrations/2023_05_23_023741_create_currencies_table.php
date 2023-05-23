@@ -16,12 +16,16 @@ class CreateCurrenciesTable extends Migration
         Schema::create('currencies', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('code')->nullable();
             $table->string('logo')->nullable();
+            $table->string('unit')->nullable();
             $table->string('sell')->nullable();
             $table->string('last_sell')->nullable();
             $table->string('buy')->nullable();
             $table->string('last_buy')->nullable();
+            $table->integer('sort')->nullable();
 
+            $table->boolean('enable')->nullable()->default(true);
             $table->timestamps();
         });
     }

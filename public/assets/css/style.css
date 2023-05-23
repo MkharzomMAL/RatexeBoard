@@ -1,0 +1,13 @@
+.table td {
+    padding: 0.5rem;
+}
+.table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+small {
+    font-size: 60%;
+}
+footer{
+    height: 5%;
+}
